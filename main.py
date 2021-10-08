@@ -6,7 +6,7 @@ from  phonenumbers import carrier
 from phonenumbers import geocoder
 from phonenumbers import timezone
 
-import phonenumber_verify as pv
+from phonenumber_verify import tel_number_verify
 
 app = FastAPI()
 
@@ -16,5 +16,5 @@ def index() :
 
 @app.get("/{phone_number}")
 def phone_number(phone_number : str):
-    return pv.tel_number_verify(phone_number)
+    return tel_number_verify(phone_number)
 
